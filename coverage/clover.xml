@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1724086223436" clover="3.2.0">
+  <project timestamp="1724086223436" name="All files">
+    <metrics statements="40" coveredstatements="40" conditionals="16" coveredconditionals="16" methods="23" coveredmethods="22" elements="79" coveredelements="78" complexity="0" loc="40" ncloc="40" packages="4" files="5" classes="5"/>
+    <package name="redux_to_do">
+      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <file name="App.js" path="C:\Users\user\Desktop\ReactNativeProject\reduxToDo\redux_to_do\App.js">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="redux_to_do.components">
+      <metrics statements="13" coveredstatements="13" conditionals="8" coveredconditionals="8" methods="8" coveredmethods="8"/>
+      <file name="CustomButton.js" path="C:\Users\user\Desktop\ReactNativeProject\reduxToDo\redux_to_do\components\CustomButton.js">
+        <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
+        <line num="5" count="47" type="stmt"/>
+        <line num="9" count="48" type="cond" truecount="2" falsecount="0"/>
+        <line num="22" count="3" type="stmt"/>
+      </file>
+      <file name="RenderItem.js" path="C:\Users\user\Desktop\ReactNativeProject\reduxToDo\redux_to_do\components\RenderItem.js">
+        <metrics statements="10" coveredstatements="10" conditionals="6" coveredconditionals="6" methods="6" coveredmethods="6"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="7" count="14" type="stmt"/>
+        <line num="8" count="14" type="stmt"/>
+        <line num="9" count="14" type="stmt"/>
+        <line num="11" count="14" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="32" count="1" type="stmt"/>
+        <line num="45" count="2" type="stmt"/>
+        <line num="49" count="1" type="stmt"/>
+        <line num="59" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="redux_to_do.screen">
+      <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
+      <file name="ToDoScreen.js" path="C:\Users\user\Desktop\ReactNativeProject\reduxToDo\redux_to_do\screen\ToDoScreen.js">
+        <metrics statements="7" coveredstatements="7" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
+        <line num="8" count="8" type="stmt"/>
+        <line num="9" count="8" type="stmt"/>
+        <line num="11" count="8" type="stmt"/>
+        <line num="25" count="2" type="stmt"/>
+        <line num="34" count="4" type="stmt"/>
+        <line num="37" count="6" type="stmt"/>
+        <line num="46" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="redux_to_do.util">
+      <metrics statements="18" coveredstatements="18" conditionals="8" coveredconditionals="8" methods="10" coveredmethods="9"/>
+      <file name="util.js" path="C:\Users\user\Desktop\ReactNativeProject\reduxToDo\redux_to_do\util\util.js">
+        <metrics statements="18" coveredstatements="18" conditionals="8" coveredconditionals="8" methods="10" coveredmethods="9"/>
+        <line num="4" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="10" count="3" type="stmt"/>
+        <line num="14" count="3" type="stmt"/>
+        <line num="18" count="3" type="stmt"/>
+        <line num="19" count="3" type="stmt"/>
+        <line num="20" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="23" count="2" type="stmt"/>
+        <line num="34" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="35" count="1" type="stmt"/>
+        <line num="36" count="1" type="stmt"/>
+        <line num="39" count="1" type="stmt"/>
+        <line num="41" count="2" type="stmt"/>
+        <line num="42" count="2" type="stmt"/>
+        <line num="43" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="46" count="2" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>
