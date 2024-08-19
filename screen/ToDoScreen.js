@@ -1,38 +1,48 @@
 import { useState } from "react";
-import { StyleSheet, TextInput, View, FlatList, Text } from "react-native";
+import {
+  StyleSheet,
+  TextInput,
+  View,
+  FlatList,
+  Text,
+  Alert,
+} from "react-native";
 import RenderItem from "../components/RenderItem";
 import CustomButton from "../components/CustomButton";
-import { addNewItem } from "../util/util";
+import { useDispatch, useSelector } from "react-redux";
+import { add_item } from "../reducers/ToDoSlice";
 
 export default function ToDoScreen() {
-  const [enteredValue, SetEnteredValue] = useState("");
-  const [toDoItems, SetToDoItems] = useState([]);
+  const [inputValue, SetInputValue] = useState("");
+  const dispatch = useDispatch();
+  const toDoItems = useSelector((state) => state.toDo.toDoItems);
 
+  const handleInputValue = () => {
+    if (inputValue.trim() === "") {
+      Alert.alert("Warning", "Invalid input");
+    } else {
+      dispatch(add_item(inputValue));
+      SetInputValue("");
+    }
+  };
   return (
     <>
       <Text style={styles.title}>TO DO LIST</Text>
-      <View style={styles.goalContainer} testID  ='toDoScreen'>
+      <View style={styles.goalContainer} testID="toDoScreen">
         <TextInput
           style={styles.goalInput}
           placeholder=" Add new todo item"
-          onChangeText={SetEnteredValue}
-          value={enteredValue}
+          onChangeText={SetInputValue}
+          value={inputValue}
           testID="addText"
         />
-        <CustomButton
-          iconName={"plus"}
-          onpress={() =>
-            addNewItem(enteredValue, SetEnteredValue, SetToDoItems)
-          }
-        />
+        <CustomButton iconName={"plus"} onpress={handleInputValue} />
       </View>
       <View style={styles.goalsContainer}>
         <FlatList
           testID="flatId"
           data={toDoItems}
-          renderItem={(itemData) => (
-            <RenderItem item={itemData.item} SetToDoItems={SetToDoItems} />
-          )}
+          renderItem={(itemData) => <RenderItem item={itemData.item} />}
           keyExtractor={(item, index) => {
             return item.id;
           }}

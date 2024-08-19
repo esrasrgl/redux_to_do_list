@@ -1,41 +1,47 @@
-import { View, TextInput, Text, StyleSheet } from "react-native";
+import { View, TextInput, Text, StyleSheet, Alert } from "react-native";
 import React, { useState } from "react";
 import CustomButton from "./CustomButton";
-import { deleteItem, editItem } from "../util/util";
+import { useDispatch } from "react-redux";
+import { delete_item, edit_item, is_done } from "../reducers/ToDoSlice";
 
-const RenderItem = ({ item, SetToDoItems }) => {
+const RenderItem = ({ item }) => {
   const [editItemId, SetEditItemId] = useState(null);
   const [newText, SetNewText] = useState(item.text);
-  const [isDone, setIsDone] = useState(item.isDone);
+  const dispatch = useDispatch();
+
+  const handleNewText = () => {
+    if (newText.trim() === "") {
+      Alert.alert("Warning", "Invalid input");
+      SetNewText(item.text);
+    } else {
+      dispatch(edit_item({ id: item.id, newText: newText }));
+      SetEditItemId(null);
+    }
+  };
 
   return (
     <View style={styles.goalItem}>
       {editItemId === item.id ? (
         <>
           <TextInput
-          testID="editTextID"
+            testID="editTextID"
             style={styles.goalText}
             onChangeText={SetNewText}
             value={newText}
           />
-          <CustomButton
-            iconName="check"
-            onpress={() =>
-              editItem(item, newText, SetToDoItems, SetEditItemId, SetNewText)
-            }
-          />
+          <CustomButton iconName="check" onpress={handleNewText} />
         </>
       ) : (
         <>
           <CustomButton
-            iconName={isDone ? "check-square" : "square"}
-            onpress={() => setIsDone((isDone) => !isDone)}
+            iconName={item.isDone ? "check-square" : "square"}
+            onpress={() => dispatch(is_done(item.id))}
           />
           <Text
-          testID="TextID"
+            testID="TextID"
             style={[
               styles.goalText,
-              { textDecorationLine: isDone ? "line-through" : "none" },
+              { textDecorationLine: item.isDone ? "line-through" : "none" },
             ]}
           >
             {item.text}
@@ -46,7 +52,7 @@ const RenderItem = ({ item, SetToDoItems }) => {
           />
           <CustomButton
             iconName="trash"
-            onpress={() => deleteItem(item.id, SetToDoItems)}
+            onpress={() => dispatch(delete_item(item.id))}
           />
         </>
       )}
