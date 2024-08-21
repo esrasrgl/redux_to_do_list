@@ -33,3 +33,9 @@ yarn-error.*
 
 # typescript
 *.tsbuildinfo
+
+# Coverage directory
+coverage/
+
+# Jest configuration file
+jest.config.js

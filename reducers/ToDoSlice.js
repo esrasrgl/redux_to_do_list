@@ -26,7 +26,6 @@ export const ToDoSlice = createSlice({
       }
     },
     is_done(state, action) {
-      console.log("log, is_done=>", action.payload);
       const id = action.payload;
       const item = state.toDoItems.find((item) => item.id == id);
       if (item) {
@@ -36,5 +35,5 @@ export const ToDoSlice = createSlice({
   },
 });
 
-export default ToDoSlice;
+export default ToDoSlice.reducer;
 export const { add_item, delete_item, edit_item, is_done } = ToDoSlice.actions;
